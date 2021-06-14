@@ -1,0 +1,5 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">TLU</string>
+    <string name="mapbox_access_token" tools:ignore="Typos">pk.eyJ1IjoiZ3VzdGF2am9oYW5uc29uIiwiYSI6ImNrcG5xZHJudzB1a2Yyd3FxYmtpM25zcm8ifQ.QuGiNe42atm5ieTIGPr5jQ</string>
+
+</resources>

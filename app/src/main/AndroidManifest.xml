@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.tlu">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TLU">
+        <!-- android:label to set the top text on the Android application -->
+        <activity android:name=".SettingsTab" android:label="Settings" android:parentActivityName=".MainActivity"> </activity>
+            <!-- android:parentActivityName sets the parent for the page to return back to-->
+
+        <activity android:name=".MainActivity" android:label="Navigate">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
