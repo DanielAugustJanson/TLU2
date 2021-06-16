@@ -7,6 +7,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.AutoCompleteTextView;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.maps.MapView;
@@ -29,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        mapView = (MapView) findViewById(R.id.mapView);
+        mapView = findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
@@ -41,13 +46,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //Gets the token that is required to be showcased in the beginning.
-        //Mapbox.getInstance(this,getString(R.string.mapbox_access_token));
 
-        //Leiab antud objektile ylesse selle ID mille main.xml-is ekraanile maarasime
-        //mapView = (MapView) findViewById(R.id.mainScreenMap);
-        //Pomst et kaart tootaks peame kirjutama ymber OpenGLi activitid. Vms. Ise ka eriti aru ei saanud
-        //mapView.onCreate(savedInstanceState);
     }
 
     // Põmst peame iga activity funktsiooni alla kirjutama et Map teeks samaaegselt samu ajsu.
@@ -99,5 +98,41 @@ public class MainActivity extends AppCompatActivity {
         // Teeb uue objekti open mis avab seadete lahtri
         Intent openS = new Intent(this,SettingsTab.class);
         startActivity(openS);
+    }
+
+    public void toast(View view) {
+        Toast.makeText(getApplicationContext(),"Work in progress",Toast.LENGTH_SHORT).show();
+    }
+
+
+    public void esimene(View view) {
+        Toast.makeText(getApplicationContext(),"You are viewing the first floor",Toast.LENGTH_SHORT).show();
+    }
+
+    public void play(View view) {
+        ImageView arrowdown= findViewById(R.id.arrowDown);
+        arrowdown.setVisibility(View.VISIBLE);
+        ImageView arrowup= findViewById(R.id.arrowUp);
+        arrowup.setVisibility(View.VISIBLE);
+        Animation animation= AnimationUtils.loadAnimation(this,R.anim.up_down);
+        Animation animation2= AnimationUtils.loadAnimation(this,R.anim.down_up);
+
+        arrowup.startAnimation(animation);
+        arrowdown.startAnimation(animation2);
+
+    }
+
+    public void endToStart(View view) {
+
+        AutoCompleteTextView start = findViewById(R.id.StartPoint);
+        AutoCompleteTextView end = findViewById(R.id.EndPoint);
+        String getStart = start.getText().toString();
+        String getEnd = end.getText().toString();
+        String holder=getStart;
+        start.setText(getEnd);
+        end.setText(holder);
+
+
+
     }
 }

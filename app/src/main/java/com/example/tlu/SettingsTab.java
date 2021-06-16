@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.Switch;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 
@@ -66,6 +67,9 @@ public class SettingsTab extends AppCompatActivity {
     public void UpdateViewData(){
         elevatorState.setChecked(elevatorLoadSwitch);
         staffState.setChecked(staffLoadSwitch);
+    }
+    public void toast(View view) {
+        Toast.makeText(getApplicationContext(), "Work in progress", Toast.LENGTH_SHORT).show();
     }
 
 }

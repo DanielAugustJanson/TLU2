@@ -7,26 +7,290 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/buttonSettings"
-        android:layout_width="41dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:onClick="OpenSettings"
-        android:text="S"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="50dp"
+        android:layout_height="60dp"
+        android:layout_margin="5dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/CW1">
+
+
+        <ImageView
+            android:id="@+id/roundedImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/tlu2" />
+    </androidx.cardview.widget.CardView>
 
 
     <com.mapbox.mapboxsdk.maps.MapView
         android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:mapbox_cameraTargetLat="59.42464"
-        app:mapbox_cameraTargetLng="24.74932"
-        app:mapbox_cameraZoom="15"
-        tools:context=".examples.styles.MapboxStudioStyleActivity
-        "/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:mapbox_cameraTargetLat="59.43897342470341"
+        app:mapbox_cameraTargetLng="24.773221775182392"
+        app:mapbox_cameraZoom="18"
+        >
+    </com.mapbox.mapboxsdk.maps.MapView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_margin="5dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/CW2">
+
+    <LinearLayout
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:orientation="vertical"
+         android:id="@+id/layout"
+         android:background="@color/layout"
+         >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="330dp"
+            android:layout_marginTop="15dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/CWCalender">
+            <Button
+                android:id="@+id/buttonCalender"
+                android:onClick="toast"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_baseline_calendar_today_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="230dp"
+            android:layout_marginTop="-35dp"
+            android:id="@+id/CWPlay">
+            <Button
+                android:onClick="play"
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_baseline_play_arrow_24" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="330dp"
+            android:layout_marginTop="-35dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/CWSettings">
+            <Button
+                android:id="@+id/buttonSettings"
+                android:onClick="OpenSettings"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_baseline_settings_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="165dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="-100dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/CWStartPoint">
+            <AutoCompleteTextView
+                android:id="@+id/StartPoint"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Start-point"
+                />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="165dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="10dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/CWEndPoint">
+            <AutoCompleteTextView
+                android:id="@+id/EndPoint"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="End-point" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="30dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="-95dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/CWSwitch">
+            <Button
+                android:onClick="endToStart"
+                android:id="@+id/Switch"
+                android:paddingTop="40dp"
+                android:layout_marginTop="20dp"
+                android:paddingBottom="40dp"
+                android:layout_width="30dp"
+                android:layout_height="60dp"
+                android:background="@drawable/ic_baseline_swap_vert_24"/>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/CW3"
+        android:layout_width="50dp"
+        android:layout_height="300dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="160dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/CW2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/CW1"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+
+        >
+
+        <LinearLayout
+            android:id="@+id/LL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bond"
+            android:orientation="vertical"
+
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            >
+
+            <LinearLayout
+                android:id="@+id/LL2"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:background="@color/layout"
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+
+                >
+
+                <Button
+                    android:onClick="toast"
+                    android:id="@+id/floor3"
+                    android:layout_width="40dp"
+                    android:layout_height="50dp"
+                    android:text="2"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="-5dp"
+                    android:layout_marginTop="25dp"
+                    app:layout_constraintBottom_toTopOf="parent"
+                    app:strokeWidth="0dp"
+                    app:cornerRadius="20dp" />
+
+                <ImageView
+                    android:id="@+id/arrowDown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="20dp"
+
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24" />
+
+                <Button
+                    android:id="@+id/floor2"
+                    android:layout_width="40dp"
+                    android:layout_height="50dp"
+                    android:text="1A"
+                    android:paddingLeft="-5dp"
+                    android:paddingRight="-5dp"
+                    android:textSize="20dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginLeft="-5dp"
+                    app:strokeWidth="0dp"
+                    app:cornerRadius="20dp"
+                    app:layout_constraintBottom_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/arrowUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="0dp"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/ic_baseline_keyboard_arrow_up_24" />
+
+                <Button
+                    android:onClick="esimene"
+                    android:id="@+id/floor1"
+                    android:layout_width="50dp"
+                    android:layout_height="60dp"
+                    android:text="1"
+                    android:textSize="30dp"
+                    android:layout_marginTop="0dp"
+                    app:strokeWidth="1dp"
+                    app:cornerRadius="25dp"
+                    android:layout_marginLeft="-10dp"
+                    android:layout_margin="-12dp"
+
+                    app:layout_constraintBottom_toTopOf="parent" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

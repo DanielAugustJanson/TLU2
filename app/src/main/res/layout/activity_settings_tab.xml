@@ -1,46 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/buttonSettings"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingsTab">
+    tools:context=".MainActivity">
+
 
     <TextView
         android:id="@+id/appVer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="176dp"
         android:layout_marginEnd="176dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="712dp"
         android:text="Ver. 0.0.1"
         android:textColor="#A6A6A6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+
+        android:layout_marginLeft="236dp"
+        android:layout_marginTop="264dp"
+        android:src="@drawable/ic_baseline_close_24">
+
+    </ImageView>
+
     <Switch
         android:id="@+id/useElevatorSwitch"
-        android:layout_width="178dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="136dp"
-        android:layout_marginEnd="117dp"
-        android:text="Use Elevator"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="272dp"
+        android:layout_marginTop="246dp"
+        tools:layout_editor_absoluteX="181dp"
+        tools:layout_editor_absoluteY="166dp">
+    </Switch>
 
     <Switch
         android:id="@+id/doorAccessSwitch"
-        android:layout_width="178dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="28dp"
-        android:text="Staff Access"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/useElevatorSwitch"
-        app:layout_constraintTop_toBottomOf="@+id/useElevatorSwitch" />
+        android:layout_width="wrap_content"
+        android:layout_height="58dp"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="272dp"
+        android:layout_marginTop="166dp"
+        tools:layout_editor_absoluteX="198dp"
+        tools:layout_editor_absoluteY="219dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </Switch>
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="169dp"
+        android:layout_height="52dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="252dp"
+        android:text="Use Elevator"
+        android:textSize="26dp"
+        android:textColor="#2D2926"
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="174dp" />
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="159dp"
+        android:layout_height="46dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="174dp"
+        android:text="Staff Access"
+        android:textColor="#2D2926"
+        android:textSize="26dp"
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="227dp" />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="321dp"
+        android:layout_marginTop="182dp"
+        android:src="@drawable/ic_baseline_check_24">
+
+    </ImageView>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="238dp"
+
+        android:layout_marginTop="183dp"
+        android:src="@drawable/ic_baseline_close_24">
+
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="325dp"
+        android:layout_marginTop="264dp"
+        android:src="@drawable/ic_baseline_check_24">
+
+    </ImageView>
+
+
+    <TextView
+        android:id="@+id/txtLanguage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="331dp"
+        android:text="Language:"
+        android:textColor="#2D2926"
+        android:textSize="26dp" />
+
+    <ImageButton
+        android:onClick="toast"
+        android:id="@+id/estLng"
+        android:layout_width="77dp"
+        android:layout_height="52dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="184dp"
+        android:layout_marginTop="326dp"
+        android:src="@mipmap/estonia" />
+
+    <ImageButton
+        android:onClick="toast"
+        android:id="@+id/engLng"
+        android:layout_width="82dp"
+        android:layout_height="52dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="275dp"
+        android:layout_marginTop="326dp"
+        android:src="@mipmap/kingdom" />
+
+
+</RelativeLayout>
