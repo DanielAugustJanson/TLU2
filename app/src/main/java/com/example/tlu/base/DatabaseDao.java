@@ -1,22 +1,15 @@
 package com.example.tlu.base;
 
 import androidx.room.Dao;
+import androidx.room.Query;
+
+import java.util.List;
 
 @Dao
 public interface DatabaseDao {
-    /*@Query("SELECT * FROM user")
-    List<User> getAll();
+    @Query("SELECT * FROM nav_points WHERE room_id IS :roomID")
+    List<NavPoints> findDestination(int roomID);
 
-    @Query("SELECT * FROM user WHERE uid IN (:userIds)")
-    List<User> loadAllByIds(int[] userIds);
 
-    @Query("SELECT * FROM user WHERE first_name LIKE :first AND " +
-            "last_name LIKE :last LIMIT 1")
-    User findByName(String first, String last);
 
-    @Insert
-    void insertAll(User... users);
-
-    @Delete
-    void delete(User user);*/
 }

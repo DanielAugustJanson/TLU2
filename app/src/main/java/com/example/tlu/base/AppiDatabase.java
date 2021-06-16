@@ -4,16 +4,16 @@ import androidx.room.Database;
 import androidx.room.Ignore;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {com.example.tlu.base.Building.class, com.example.tlu.base.Floor.class, com.example.tlu.base.NavConnections.class, com.example.tlu.base.NavPoints.class, com.example.tlu.base.PointType.class, com.example.tlu.base.Room.class, com.example.tlu.base.RoomName.class, com.example.tlu.base.RoomType.class}, version = 1)
+@Database(entities = {Building.class, Floor.class, NavConnections.class, NavPoints.class, PointType.class, Room.class, RoomName.class, RoomType.class}, version = 1, exportSchema = false)
 public abstract class AppiDatabase extends RoomDatabase {
-    /*public abstract DatabaseDao DatabaseDao();*/
+    public abstract DatabaseDao DatabaseDao();
     public abstract BuildingDao BuildingDao();
-    public abstract com.example.tlu.base.FloorDao FloorDao();
-    public abstract com.example.tlu.base.NavConnectionsDao NavConnectionsDao();
-    public abstract com.example.tlu.base.PointTypeDao PointTypeDao();
-    public abstract com.example.tlu.base.RoomDao RoomDao();
-    public abstract com.example.tlu.base.RoomNameDao RoomNameDao();
-    public abstract com.example.tlu.base.RoomTypeDao RoomTypeDao();
+    public abstract FloorDao FloorDao();
+    public abstract NavConnectionsDao NavConnectionsDao();
+    public abstract PointTypeDao PointTypeDao();
+    public abstract RoomDao RoomDao();
+    public abstract RoomNameDao RoomNameDao();
+    public abstract RoomTypeDao RoomTypeDao();
 
     /*public abstract String getDatabasePath();*/
 }

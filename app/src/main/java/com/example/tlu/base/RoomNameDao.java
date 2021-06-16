@@ -16,7 +16,7 @@ public interface RoomNameDao {
     void delete(RoomName roomName);
 
     @Query("SELECT en FROM room_name WHERE rowid = :roomNameID LIMIT 1")
-    String getEn(int roomNameID);
+    String getEN(int roomNameID);
 
     @Query("SELECT ee FROM room_name WHERE rowid = :roomNameID LIMIT 1")
     String getEE(int roomNameID);
