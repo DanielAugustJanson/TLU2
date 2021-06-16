@@ -11,12 +11,12 @@ import java.util.List;
 @Dao
 public interface BuildingDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertAll(com.example.tlu.base.Building... buildings);
+    void insertAll(Building... buildings);
 
     @Delete
-    void delete(com.example.tlu.base.Building building);
+    void delete(Building building);
 
     @Query("SELECT * FROM building")
-    List<com.example.tlu.base.Building> buildingsAll();
+    List<Building> allBuildings();
 
 }

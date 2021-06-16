@@ -16,8 +16,4 @@ public class Building {
     @ColumnInfo(name = "name")
     public String name;
 
-    public Building(int id, String name){
-        this.id = id;
-        this.name = name;
-    }
 }
