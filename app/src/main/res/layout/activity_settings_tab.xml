@@ -65,14 +65,14 @@
 
 
     <TextView
-        android:id="@+id/textViewEl"
+        android:id="@+id/textView"
         android:layout_width="169dp"
         android:layout_height="52dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="55dp"
         android:layout_marginTop="252dp"
-        android:text="@string/use_elevator"
+        android:text="Use Elevator"
         android:textSize="26dp"
         android:textColor="#2D2926"
         tools:layout_editor_absoluteX="59dp"
@@ -87,7 +87,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="55dp"
         android:layout_marginTop="174dp"
-        android:text="@string/staff_access"
+        android:text="Staff Access"
         android:textColor="#2D2926"
         android:textSize="26dp"
         tools:layout_editor_absoluteX="59dp"
@@ -138,11 +138,12 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="55dp"
         android:layout_marginTop="331dp"
-        android:text="@string/language"
+        android:text="Language:"
         android:textColor="#2D2926"
         android:textSize="26dp" />
 
     <ImageButton
+        android:onClick="toast"
         android:id="@+id/estLng"
         android:layout_width="77dp"
         android:layout_height="52dp"
@@ -153,6 +154,7 @@
         android:src="@mipmap/estonia" />
 
     <ImageButton
+        android:onClick="toast"
         android:id="@+id/engLng"
         android:layout_width="82dp"
         android:layout_height="52dp"
