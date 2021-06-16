@@ -34,9 +34,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:mapbox_cameraTargetLat="59.43897342470341"
-        app:mapbox_cameraTargetLng="24.773221775182392"
-        app:mapbox_cameraZoom="18"
+        app:mapbox_cameraTargetLat="0"
+        app:mapbox_cameraTargetLng="0"
+        app:mapbox_cameraZoom="12"
         >
     </com.mapbox.mapboxsdk.maps.MapView>
 
