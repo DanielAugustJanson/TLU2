@@ -1,16 +1,18 @@
 package com.example.tlu;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SwitchCompat;
 
+import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
-import android.provider.Settings;
+import android.app.Activity;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.Toast;
-import android.widget.ToggleButton;
+
+import java.util.Locale;
 
 
 
@@ -29,6 +31,8 @@ public class SettingsTab extends AppCompatActivity {
     private boolean elevatorLoadSwitch;
     private boolean staffLoadSwitch;
 
+    ImageButton en, est;
+
 
 
     @Override
@@ -38,6 +42,8 @@ public class SettingsTab extends AppCompatActivity {
 
         elevatorState = (Switch) findViewById(R.id.useElevatorSwitch);
         staffState = (Switch) findViewById(R.id.doorAccessSwitch);
+        en = findViewById(R.id.engLng);
+        est = findViewById(R.id.estLng);
 
 
         //Ootab kuni tuleb vajutus
@@ -47,6 +53,22 @@ public class SettingsTab extends AppCompatActivity {
         staffState.setOnClickListener(v -> SaveData());
         LoadData();
         UpdateViewData();
+
+        en.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setLanguage("en");
+                recreate();
+            }
+        });
+
+        est.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setLanguage("et");
+                recreate();
+            }
+        });
 
     }
     //Saves switch state
@@ -70,6 +92,22 @@ public class SettingsTab extends AppCompatActivity {
     }
     public void toast(View view) {
         Toast.makeText(getApplicationContext(), "Work in progress", Toast.LENGTH_SHORT).show();
+    }
+    public void setLanguage(String lan){
+        Locale locale = new Locale(lan);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        SharedPreferences.Editor editor = getSharedPreferences("Settings", MODE_PRIVATE).edit();
+        editor.putString("Language", lan);
+        editor.apply();
+    }
+
+    public void loadLanguage(){
+        SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+        String lang = prefs.getString("Language", "");
+        setLanguage(lang);
     }
 
 }
