@@ -117,8 +117,8 @@ public class MainActivity extends AppCompatActivity {
         Animation animation= AnimationUtils.loadAnimation(this,R.anim.up_down);
         Animation animation2= AnimationUtils.loadAnimation(this,R.anim.down_up);
 
-        arrowup.startAnimation(animation);
-        arrowdown.startAnimation(animation2);
+        arrowup.startAnimation(animation2);
+        arrowdown.startAnimation(animation);
 
     }
 
