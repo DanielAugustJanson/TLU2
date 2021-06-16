@@ -13,11 +13,14 @@ import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.tlu.base.AppiDatabase;
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.maps.Style;
+
+import java.util.concurrent.Executor;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -26,11 +29,14 @@ public class MainActivity extends AppCompatActivity {
     private MapView mapView;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Mapbox.getInstance(this, getString(R.string.mapbox_access_token));
+
+
+        AppiDatabase db = androidx.room.Room.databaseBuilder(getApplicationContext(),
+                AppiDatabase.class, "appi-data.db").createFromAsset("database/appi.db").allowMainThreadQueries().fallbackToDestructiveMigration().build();;
 
         setContentView(R.layout.activity_main);
 
