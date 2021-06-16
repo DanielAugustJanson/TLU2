@@ -20,7 +20,7 @@
 
 
         <ImageView
-            android:id="@+id/roundedImageView"
+            android:id="@+id/TLUlogo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/white"
@@ -92,7 +92,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginLeft="230dp"
+                android:layout_marginStart="230dp"
                 android:layout_marginTop="-35dp"
                 android:id="@+id/CWPlay">
                 <Button
@@ -106,7 +106,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginLeft="330dp"
+                android:layout_marginStart="330dp"
                 android:layout_marginTop="-35dp"
                 android:elevation="10dp"
                 app:cardCornerRadius="10dp"
@@ -125,9 +125,9 @@
                     />
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
-                android:layout_width="200dp"
+                android:layout_width="165dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="55dp"
                 android:layout_marginTop="-100dp"
                 android:elevation="10dp"
                 app:cardCornerRadius="10dp"
@@ -139,13 +139,13 @@
                     android:id="@+id/StartPoint"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="@string/start_point"
+                    android:hint="Start-point"
                     />
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
-                android:layout_width="200dp"
+                android:layout_width="165dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="55dp"
                 android:layout_marginTop="10dp"
                 android:elevation="10dp"
                 app:cardCornerRadius="10dp"
@@ -157,7 +157,29 @@
                     android:id="@+id/EndPoint"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="@string/end_point" />
+                    android:hint="End-point" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="30dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="-95dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/CWSwitch">
+                <Button
+                    android:onClick="endToStart"
+                    android:id="@+id/Switch"
+                    android:paddingTop="40dp"
+                    android:layout_marginTop="20dp"
+                    android:paddingBottom="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/ic_baseline_swap_vert_24"/>
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
@@ -204,7 +226,7 @@
 
                 <Button
                     android:onClick="toast"
-                    android:id="@+id/floor3"
+                    android:id="@+id/floor2"
                     android:layout_width="40dp"
                     android:layout_height="50dp"
                     android:text="2"
@@ -219,14 +241,17 @@
                     android:id="@+id/arrowDown"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="20dp"
+
                     android:visibility="invisible"
                     app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24" />
 
                 <Button
-                    android:id="@+id/floor2"
+                    android:id="@+id/floor1a"
                     android:layout_width="40dp"
                     android:layout_height="50dp"
+                    android:onClick="btn1a"
                     android:text="1A"
                     android:paddingLeft="-5dp"
                     android:paddingRight="-5dp"
@@ -242,6 +267,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
+                    android:layout_marginTop="0dp"
                     android:visibility="invisible"
                     app:srcCompat="@drawable/ic_baseline_keyboard_arrow_up_24" />
 
