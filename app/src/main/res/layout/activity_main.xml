@@ -51,138 +51,116 @@
         app:layout_constraintStart_toStartOf="parent"
         android:id="@+id/CW2">
 
-    <LinearLayout
-         app:layout_constraintBottom_toBottomOf="parent"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintStart_toStartOf="parent"
-         android:layout_width="match_parent"
-         android:layout_height="match_parent"
-         android:orientation="vertical"
-         android:id="@+id/layout"
-         android:background="@color/layout"
-         >
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="330dp"
-            android:layout_marginTop="15dp"
-            android:elevation="10dp"
-            app:cardCornerRadius="10dp"
+        <LinearLayout
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:id="@+id/CWCalender">
-            <Button
-                android:id="@+id/buttonCalender"
-                android:onClick="toast"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/ic_baseline_calendar_today_24"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/layout"
+            android:background="@color/layout"
+            >
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="330dp"
+                android:layout_marginTop="15dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
-        </androidx.cardview.widget.CardView>
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/CWCalender">
+                <Button
+                    android:id="@+id/buttonCalender"
+                    android:onClick="toast"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/ic_baseline_calendar_today_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+            </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:elevation="10dp"
-            app:cardCornerRadius="40dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="230dp"
-            android:layout_marginTop="-35dp"
-            android:id="@+id/CWPlay">
-            <Button
-                android:onClick="play"
-                android:id="@+id/button"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/ic_baseline_play_arrow_24" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="330dp"
-            android:layout_marginTop="-35dp"
-            android:elevation="10dp"
-            app:cardCornerRadius="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:id="@+id/CWSettings">
-            <Button
-                android:id="@+id/buttonSettings"
-                android:onClick="OpenSettings"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/ic_baseline_settings_24"
+            <androidx.cardview.widget.CardView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="165dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="55dp"
-            android:layout_marginTop="-100dp"
-            android:elevation="10dp"
-            app:cardCornerRadius="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:id="@+id/CWStartPoint">
-            <AutoCompleteTextView
-                android:id="@+id/StartPoint"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="Start-point"
-                />
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="165dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="55dp"
-            android:layout_marginTop="10dp"
-            android:elevation="10dp"
-            app:cardCornerRadius="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:id="@+id/CWEndPoint">
-            <AutoCompleteTextView
-                android:id="@+id/EndPoint"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="End-point" />
-        </androidx.cardview.widget.CardView>
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="230dp"
+                android:layout_marginTop="-35dp"
+                android:id="@+id/CWPlay">
+                <Button
+                    android:onClick="play"
+                    android:id="@+id/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/ic_baseline_play_arrow_24" />
+            </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="30dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="-95dp"
-            android:elevation="10dp"
-            app:cardCornerRadius="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:id="@+id/CWSwitch">
-            <Button
-                android:onClick="endToStart"
-                android:id="@+id/Switch"
-                android:paddingTop="40dp"
-                android:layout_marginTop="20dp"
-                android:paddingBottom="40dp"
-                android:layout_width="30dp"
-                android:layout_height="60dp"
-                android:background="@drawable/ic_baseline_swap_vert_24"/>
-        </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="330dp"
+                android:layout_marginTop="-35dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/CWSettings">
+                <Button
+                    android:id="@+id/buttonSettings"
+                    android:onClick="OpenSettings"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/ic_baseline_settings_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="-100dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/CWStartPoint">
+                <AutoCompleteTextView
+                    android:id="@+id/StartPoint"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/start_point"
+                    />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/CWEndPoint">
+                <AutoCompleteTextView
+                    android:id="@+id/EndPoint"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/end_point" />
+            </androidx.cardview.widget.CardView>
 
-    </LinearLayout>
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -241,9 +219,7 @@
                     android:id="@+id/arrowDown"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginBottom="20dp"
-
+                    android:layout_marginTop="20dp"
                     android:visibility="invisible"
                     app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24" />
 
@@ -266,7 +242,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
-                    android:layout_marginTop="0dp"
                     android:visibility="invisible"
                     app:srcCompat="@drawable/ic_baseline_keyboard_arrow_up_24" />
 
