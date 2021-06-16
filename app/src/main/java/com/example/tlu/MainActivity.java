@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Creating a new instance of MapView Object.
     private MapView mapView;
+    AppiDatabase db;
 
 
     @Override
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         Mapbox.getInstance(this, getString(R.string.mapbox_access_token));
 
 
-        AppiDatabase db = androidx.room.Room.databaseBuilder(getApplicationContext(),
+        db = androidx.room.Room.databaseBuilder(getApplicationContext(),
                 AppiDatabase.class, "appi-data.db").createFromAsset("database/appi.db").allowMainThreadQueries().fallbackToDestructiveMigration().build();;
 
         setContentView(R.layout.activity_main);
