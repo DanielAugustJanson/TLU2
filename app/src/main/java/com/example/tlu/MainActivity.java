@@ -30,11 +30,13 @@ public class MainActivity extends AppCompatActivity {
     //Creating a new instance of MapView Object.
     private MapView mapView;
     public static AppiDatabase db;
-    private final ThreadPoolExecutor appiExecute = new ThreadPoolExecutor(2, 4, 500, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>());
+    private final ThreadPoolExecutor appiExecute = new ThreadPoolExecutor(2, 4, 500, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>());
     public static List<Room> forPoints;
     public static List<Room> roomsForLookUp;
     public static int floorDisplayed = 1;
+    public static int roomIDForDestination;
     public static String searchTerm;
+    public static List<NavPoints> destinationHolder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
