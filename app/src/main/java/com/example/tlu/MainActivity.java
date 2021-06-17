@@ -14,13 +14,18 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.tlu.base.AppiDatabase;
+import com.example.tlu.base.Room;
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.maps.Style;
 
-import java.util.concurrent.Executor;
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -28,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     //Creating a new instance of MapView Object.
     private MapView mapView;
     AppiDatabase db;
+    private final ThreadPoolExecutor appiExecute = new ThreadPoolExecutor(2, 4, 500, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>());
 
 
     @Override
@@ -37,9 +43,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         db = androidx.room.Room.databaseBuilder(getApplicationContext(),
-                AppiDatabase.class, "appi-data.db").createFromAsset("database/appi.db").allowMainThreadQueries().fallbackToDestructiveMigration().build();;
+                AppiDatabase.class, "appi-data.db").createFromAsset("database/appi.db").fallbackToDestructiveMigration().build();;
 
         setContentView(R.layout.activity_main);
+
+        //List<Room> forPoints = appiExecute.execute(Callable<List<Room>>(){db.RoomDao().getFloor(1)});
 
         mapView = findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
