@@ -34,8 +34,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:mapbox_cameraTargetLat="0.3"
-        app:mapbox_cameraTargetLng="-0.22"
+        app:mapbox_cameraBearing="0"
+        app:mapbox_cameraTargetLat="0.317"
+        app:mapbox_cameraTargetLng="-0.249"
         app:mapbox_cameraZoom="12"
         >
     </com.mapbox.mapboxsdk.maps.MapView>
@@ -251,7 +252,7 @@
                     android:id="@+id/floor1a"
                     android:layout_width="40dp"
                     android:layout_height="50dp"
-                    android:onClick="btn1a"
+                    android:onClick="esimene"
                     android:text="1A"
                     android:paddingLeft="-5dp"
                     android:paddingRight="-5dp"

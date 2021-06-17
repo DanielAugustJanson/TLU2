@@ -19,10 +19,14 @@ import android.widget.Toast;
 
 import com.example.tlu.base.*;
 import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.camera.CameraPosition;
+import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
+import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.maps.Style;
+import com.mapbox.mapboxsdk.style.layers.Layer;
 import com.mapbox.mapboxsdk.style.layers.RasterLayer;
 
 import java.util.List;
@@ -89,6 +93,21 @@ public class MainActivity extends AppCompatActivity {
                 mapboxMap.setStyle(new Style.Builder().fromUri("mapbox://styles/gustavjohannson/ckpzb9eop05mq18qviptlbm5d"), new Style.OnStyleLoaded() {
                     @Override
                     public void onStyleLoaded(@NonNull Style style) {
+
+                        Layer background = style.getLayer("background");
+                        Layer groundFloor = style.getLayer("Base");
+                        Layer astra1K = style.getLayer("Astra-1K");
+                        Layer astra1AK = style.getLayer("Astra-1AK");
+
+
+                        //Seadistame esialgse kaamera positsiooni
+                        CameraPosition startingCameraPosition = new CameraPosition.Builder()
+                                .target(new LatLng(0.5,-0.5))
+                                .zoom(12)
+                                .build();
+
+                        mapboxMap.animateCamera(CameraUpdateFactory.newCameraPosition(startingCameraPosition),100);
+
 
 
                         // Custom map style has been loaded and map is now ready
