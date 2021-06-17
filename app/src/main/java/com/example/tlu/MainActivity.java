@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     public static List<Room> forPoints;
     public static List<Room> roomsForLookUp;
     public static int floorDisplayed = 1;
+    public static String searchTerm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
