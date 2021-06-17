@@ -1,11 +1,12 @@
-
-### Appi, olen eksinud!
+## Appi, olen eksinud!
 
 Tallinna Ülikooli hoone on piisavalt suur, et seal ära eksida. Tallinna Ülikooli õpetaja, õpilane või külaline kasutab telefoni appi, et orienteeruda koolimaja peal. 
 Sisestatakse algus ja lõpp-punkt ning telefoni rakendus näitab teekonda. 
 Projekt on loodud Tallinna Ülikooli esimese aasta tudengite poolt aine tarkvaraarenduse projekt raames.
 
-**Kasutatud tehnoloogiad:**
+![Screenshot](screenshot.png)
+
+### Kasutatud tehnoloogiad:
 
 - Android Studio 4.2.1,
 - DB Browser for SQLite Version 3.12.2,
@@ -14,10 +15,11 @@ Projekt on loodud Tallinna Ülikooli esimese aasta tudengite poolt aine tarkvara
 - GitHub Desktop Version 2.9.0 (x64),
 - Mapbox Android SDK 9.6.1,
 
+### Osalejad:
 
 Projektis osalesid Egle Vestrik, Andres Pihl, Anastasija Selevjorstova ja Daniel Janson. Täname Carolyn Kokka tema varasemate panuste eest. 
 
-Paigaldus:
+### Paigaldus:
 
 Nõuded
 - Android 7.0 + 
