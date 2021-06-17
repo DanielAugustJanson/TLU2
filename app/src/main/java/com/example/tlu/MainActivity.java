@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     public static AppiDatabase db;
     private final ThreadPoolExecutor appiExecute = new ThreadPoolExecutor(2, 4, 500, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>());
     public static List<Room> forPoints;
+    public static List<Room> roomsForLookUp;
     public static int floorDisplayed = 1;
 
     @Override
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         appiExecute.execute(new GetRoomPoints());
+        //appiExecute.execute(new LookForRoomByCode());
 
         mapView = findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
