@@ -1,6 +1,7 @@
 package com.example.tlu;
 
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
@@ -39,6 +40,9 @@ public class SettingsTab extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings_tab);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(getResources().getString(R.string.app_name));
 
         elevatorState = (Switch) findViewById(R.id.useElevatorSwitch);
         staffState = (Switch) findViewById(R.id.doorAccessSwitch);

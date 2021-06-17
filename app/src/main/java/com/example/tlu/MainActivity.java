@@ -1,14 +1,19 @@
 package com.example.tlu;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -20,6 +25,7 @@ import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.maps.Style;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -35,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
     public static List<Room> roomsForLookUp;
     public static int floorDisplayed = 1;
     public static String searchTerm;
+    AutoCompleteTextView autoCompleteTextView;
+    Button calendar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +54,17 @@ public class MainActivity extends AppCompatActivity {
                 AppiDatabase.class, "appi-data.db").createFromAsset("database/appi.db").fallbackToDestructiveMigration().build();
 
         setContentView(R.layout.activity_main);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(getResources().getString(R.string.app_name2));
+
+        calendar = findViewById(R.id.buttonCalender);
+        calendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toast(v);
+            }
+        });
 
         appiExecute.execute(new GetRoomPoints());
         //appiExecute.execute(new LookForRoomByCode());
@@ -69,6 +88,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        autoCompleteTextView = findViewById(R.id.StartPoint);
 
 
     }
@@ -125,12 +146,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void toast(View view) {
-        Toast.makeText(getApplicationContext(),"Work in progress",Toast.LENGTH_SHORT).show();
+        String str = getLocaleString(R.string.toast1);
+        Toast.makeText(getApplicationContext(), str,Toast.LENGTH_SHORT).show();
     }
 
 
     public void esimene(View view) {
-        Toast.makeText(getApplicationContext(),"You are viewing the first floor",Toast.LENGTH_SHORT).show();
+        String str = getLocaleString(R.string.toast_second);
+        Toast.makeText(getApplicationContext(), str ,Toast.LENGTH_SHORT).show();
     }
 
     public void play(View view) {
@@ -157,7 +180,15 @@ public class MainActivity extends AppCompatActivity {
         end.setText(holder);
 
 
-
+    }
+    public String getLocaleString(int id){
+        Locale current = getResources().getConfiguration().locale;
+        Configuration conf = getResources().getConfiguration();
+        conf.locale = new Locale(current.getLanguage());
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        Resources resources = new Resources(getAssets(), metrics, conf);
+        return resources.getString(id);
     }
 
 }

@@ -7,5 +7,6 @@
     <string name="staff_access">Näita keldrit</string>
     <string name="start_point">Algpunkt</string>
     <string name="end_point">Sihtpunkt</string>
-    <string name="toast_1">Töös</string>
+    <string name="toast1">Arendamisel</string>
+    <string name="toast_second">Kuvatakse esimest korrust</string>
 </resources>
