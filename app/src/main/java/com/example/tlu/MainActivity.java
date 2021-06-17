@@ -43,11 +43,11 @@ public class MainActivity extends AppCompatActivity {
     public static int floorDisplayed = 1;
     public static int roomIDForDestination;
     public static String searchTerm;
+    public static List<NavPoints> destinationHolder;
 
     AutoCompleteTextView autoCompleteTextView;
     Button calendar;
 
-    public static List<NavPoints> destinationHolder;
 
 
     @Override
