@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
                         //Seadistame esialgse kaamera positsiooni
                         CameraPosition startingCameraPosition = new CameraPosition.Builder()
-                                .target(new LatLng(0.5,-0.5))
+                                .target(new LatLng(0.3177,-0.2487))
                                 .zoom(12)
                                 .build();
 
