@@ -46,6 +46,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     //Mapbox Required Dependencies
     implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:9.6.1'
+    'com.mapbox.mapboxsdk:mapbox-android-plugin-markerview-v9:0.4.0'
 
     def room_version = "2.3.0"
 

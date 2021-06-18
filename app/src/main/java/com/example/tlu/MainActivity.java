@@ -100,6 +100,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onMapReady(@NonNull MapboxMap mapboxMap) {
                 MainActivity.this.mapboxMap = mapboxMap;
+
+
+
                 mapboxMap.setStyle(new Style.Builder().fromUri("mapbox://styles/gustavjohannson/ckpzb9eop05mq18qviptlbm5d"), new Style.OnStyleLoaded() {
                     @Override
                     public void onStyleLoaded(@NonNull Style style) {
@@ -278,5 +281,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    //public void SetMatkers(floornumber){
 
 }
